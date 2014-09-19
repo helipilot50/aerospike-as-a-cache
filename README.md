@@ -17,11 +17,11 @@ When a tuple becomes stale, after a time period, it is removed from the cache. A
 Aerospike is similar, in concept, to a Distributed Hash Table (DHT). In other words, a really big hashtable. Aerospike also has an in-build time-to-live feature on the record (tuple) level.
 
 ### Build
-The source code for this solution is available on GitHub at http://github.com/some-place. 
+The source code for this solution is available on GitHub at https://github.com/aerospike/aerospike-as-a-cache.git. 
 
 Clone the GitHub repository to your local file system with:
 ```bash
-git clone <someplace>
+git clone https://github.com/aerospike/aerospike-as-a-cache.git
 ```
 
 Maven is used to build this example. From the rood directory of the project, issue the following command:
