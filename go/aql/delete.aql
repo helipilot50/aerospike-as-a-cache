@@ -1,0 +1,5 @@
+delete from test.flights where pk = 'DFW'
+delete from test.flights where pk = 'SFO'
+delete from test.flights where pk = 'BWI'
+delete from test.flights where pk = 'SJC'
+
