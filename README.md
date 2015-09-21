@@ -32,7 +32,7 @@ A JAR files will be produced in the subdirectory 'target': aerospike-as-a-cache-
 
 ### Run
 
-To run the tool, you will specify the address of the cluster, and the set to delete. The following command deletes from a cluster located at the server ‘192.168.1.15’, a namespace of 'test and a set named ‘demo’.
+To run the example, you will specify the address of the cluster, and the set to delete. The following command connects to a cluster located at the server ‘192.168.1.15’, a namespace of 'test and a set named ‘demo’.
 ```bash
 java -jar aerospike-as-a-cache-1.0.0-full.jar -h 192.168.1.15 -p 3000 -n test -s demo
 ```
