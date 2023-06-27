@@ -1,14 +1,14 @@
 # Aerospike as a cache
 
-##Problem
+## Problem
 You need to provide a service with up-to-date data obtained from external data sources. 
 
-The information in you service is time sensitive. Individual data elements (tuples) becomes stale after a period of time and need to be refreshed or updated. 
+The information in your service is time sensitive. Individual data elements (tuples) become stale after a period of time and need to be refreshed or updated. 
 
 When a tuple is refreshed, you pay the data provider, so you only want to obtain the data once during a period of validity.
 
-##Solution
-The solution is a read-only cache that is lazy loaded.
+## Solution
+The solution is a read-only cache that is lazy-loaded.
  
 When a request is made for a tuple, the cache is checked, if found the tuple is returned, if not it is obtained from the source, cached for later use, and returned to the caller.
 
@@ -24,11 +24,11 @@ Clone the GitHub repository to your local file system with:
 git clone https://github.com/aerospike/aerospike-as-a-cache.git
 ```
 
-Maven is used to build this example. From the rood directory of the project, issue the following command:
+Maven is used to build this example. From the root directory of the project, issue the following command:
 ```bash
 mvn clean package
 ```
-A JAR files will be produced in the subdirectory 'target': aerospike-as-a-cache-\<version\>-full.jar. This is a runnable jar complete with all the dependencies packaged
+A JAR file will be produced in the subdirectory 'target': aerospike-as-a-cache-\<version\>-full.jar. This is a runnable jar complete with all the dependencies packaged
 
 ### Run
 
@@ -45,7 +45,7 @@ This example is a simple Java application that requests information on Airports 
 The source data comes from the US Federal Aviation Authority's RESTful service at [FAA Web Services](http://services.faa.gov/).
 
 ### AsACache class
-The main class com.aerospike.examples.cache.AsACache is a simple shell that is a elementary console application. It connects to a Cluster using the the arguments passed in from the command line. 
+The main class com.aerospike.examples.cache.AsACache is a simple shell that is an elementary console application. It connects to a Cluster using the arguments passed in from the command line. 
 
 The interesting code is done in the `work()` method:
 ```java
@@ -60,7 +60,7 @@ The interesting code is done in the `work()` method:
 		log.info(flights.get("SJC"));
 	}
 ```
-Here you see the creation of an object of type Flights, it is passed as AerospikeClient instance, an namespace name, a set name and a time to live value (in seconds). 
+Here you see the creation of an object of type Flights, it is passed as AerospikeClient instance, a namespace name, a set name, and a time to live value (in seconds). 
 
 Once instantiated, the `get()` method is called to obtain details of 4 airports: DFW, SFO, BWI and SJC. This information, in JSON, is printed to the console.
 
